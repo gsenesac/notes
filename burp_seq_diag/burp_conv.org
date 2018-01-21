@@ -9,7 +9,7 @@
 #+LANGUAGE: en
 #+SELECT_TAGS: export
 
-* Converting Burp Capture file to a Sequence Diagram
+* Introduction
 While studying a RESTful interface using [[https://portswigger.net/burp][Burp Proxy]],
 I thought it'd be useful to have a script automatically generate a 
 sequence diagram of the captured REST calls; this was inspired by the
@@ -18,13 +18,13 @@ However, in this case we're capturing the traffic with Burp,
 performing some simple processing with Python, and using Org-Mode 
 to tie it together.
 
-/Note: while Github supports org files, I don't believe it will execute the Org-Babel 
-source blocks so the sequence diagram probably won't be displayed in the Github rendering/
+/Note: while Github supports org files, it's definitely not full support so you won't see
+the sample capture file nor the sequence diagram rendered in the Github UI as of 21 Jan 2018/
 
-** Say we have a sample capture file that looks like this:
+* Say we have a sample capture file that looks like this:
 #+INCLUDE: "./burp_capture.xml" :only-contents t src xml
 
-** We can process it with a bit of Python into a PlantUML Sequence Diagram
+* We can process it with a bit of Python into a PlantUML Sequence Diagram
 #+NAME: plantuml-text
 #+BEGIN_SRC python :results output
 import xml.etree.ElementTree as ET
@@ -46,7 +46,7 @@ for item in root.findall( 'item' ):
 
 #+END_SRC
 
-** And then generate the Sequence Diagram itself using the output of the previous code block
+* And then generate the Sequence Diagram itself using the output of the previous code block
 #+HEADER: :var uml-text=plantuml-text
 #+BEGIN_SRC emacs-lisp :file diag.png :exports results
 (org-babel-execute:plantuml uml-text params)
