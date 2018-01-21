@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="1.7.30" exportTime="Sat Jan 20 20:41:56 CST 2018">
+  <item>
+    <time>Sat Jan 20 20:40:38 CST 2018</time>
+    <url><![CDATA[http://localhost:2080/]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>2080</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[R0VUIC8gSFRUUC8xLjENCkhvc3Q6IGxvY2FsaG9zdDoyMDgwDQpVc2VyLUFnZW50OiBjdXJsLzcuNTcuMA0KQWNjZXB0OiAqLyoNCkNvbm5lY3Rpb246IGNsb3NlDQoNCg==]]></request>
+    <status>200</status>
+    <responselength>791</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjAgMjAwIE9LDQpTZXJ2ZXI6IFNpbXBsZUhUVFAvMC42IFB5dGhvbi8yLjcuMTINCkRhdGU6IFN1biwgMjEgSmFuIDIwMTggMDI6NDA6MzcgR01UDQpDb250ZW50LXR5cGU6IHRleHQvaHRtbDsgY2hhcnNldD1VVEYtOA0KQ29udGVudC1MZW5ndGg6IDYzNg0KDQo8IURPQ1RZUEUgaHRtbCBQVUJMSUMgIi0vL1czQy8vRFREIEhUTUwgMy4yIEZpbmFsLy9FTiI+PGh0bWw+Cjx0aXRsZT5EaXJlY3RvcnkgbGlzdGluZyBmb3IgLzwvdGl0bGU+Cjxib2R5Pgo8aDI+RGlyZWN0b3J5IGxpc3RpbmcgZm9yIC88L2gyPgo8aHI+Cjx1bD4KPGxpPjxhIGhyZWY9ImFsZXhhLnB5Ij5hbGV4YS5weTwvYT4KPGxpPjxhIGhyZWY9ImFsZXhhLnB5YyI+YWxleGEucHljPC9hPgo8bGk+PGEgaHJlZj0iYXdzLmNvbmYiPmF3cy5jb25mPC9hPgo8bGk+PGEgaHJlZj0iYXdzLnB5Ij5hd3MucHk8L2E+CjxsaT48YSBocmVmPSJhd3MucHljIj5hd3MucHljPC9hPgo8bGk+PGEgaHJlZj0iZGV2aWNlLWluZm8iPmRldmljZS1pbmZvPC9hPgo8bGk+PGEgaHJlZj0icm9rdS5weSI+cm9rdS5weTwvYT4KPGxpPjxhIGhyZWY9InJva3UucHljIj5yb2t1LnB5YzwvYT4KPGxpPjxhIGhyZWY9InJva3VfYnJpZGdlLnB5Ij5yb2t1X2JyaWRnZS5weTwvYT4KPGxpPjxhIGhyZWY9InJva3VfZWNwX3JlcS50eHQiPnJva3VfZWNwX3JlcS50eHQ8L2E+CjxsaT48YSBocmVmPSJzc2RwLnB5Ij5zc2RwLnB5PC9hPgo8bGk+PGEgaHJlZj0ic3NkcC5weWMiPnNzZHAucHljPC9hPgo8L3VsPgo8aHI+CjwvYm9keT4KPC9odG1sPgo=]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sat Jan 20 20:41:14 CST 2018</time>
+    <url><![CDATA[http://localhost:2080/failtopost]]></url>
+    <host ip="127.0.0.1">localhost</host>
+    <port>2080</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/failtopost]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[UE9TVCAvZmFpbHRvcG9zdCBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjIwODANClVzZXItQWdlbnQ6IGN1cmwvNy41Ny4wDQpBY2NlcHQ6ICovKg0KQ29udGVudC1MZW5ndGg6IDINCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24veC13d3ctZm9ybS11cmxlbmNvZGVkDQpDb25uZWN0aW9uOiBjbG9zZQ0KDQonJw==]]></request>
+    <status>501</status>
+    <responselength>380</responselength>
+    <mimetype>HTML</mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjAgNTAxIFVuc3VwcG9ydGVkIG1ldGhvZCAoJ1BPU1QnKQ0KU2VydmVyOiBTaW1wbGVIVFRQLzAuNiBQeXRob24vMi43LjEyDQpEYXRlOiBTdW4sIDIxIEphbiAyMDE4IDAyOjQxOjEzIEdNVA0KQ29ubmVjdGlvbjogY2xvc2UNCkNvbnRlbnQtVHlwZTogdGV4dC9odG1sDQoNCjxoZWFkPgo8dGl0bGU+RXJyb3IgcmVzcG9uc2U8L3RpdGxlPgo8L2hlYWQ+Cjxib2R5Pgo8aDE+RXJyb3IgcmVzcG9uc2U8L2gxPgo8cD5FcnJvciBjb2RlIDUwMS4KPHA+TWVzc2FnZTogVW5zdXBwb3J0ZWQgbWV0aG9kICgnUE9TVCcpLgo8cD5FcnJvciBjb2RlIGV4cGxhbmF0aW9uOiA1MDEgPSBTZXJ2ZXIgZG9lcyBub3Qgc3VwcG9ydCB0aGlzIG9wZXJhdGlvbi4KPC9ib2R5Pgo=]]></response>
+    <comment></comment>
+  </item>
+</items>

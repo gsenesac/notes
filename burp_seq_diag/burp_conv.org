@@ -1,0 +1,53 @@
+#+TITLE: Converting Burp Capture File to PlantUML Sequence Diagram
+#+DATE: <2018-01-21 Sun>
+#+AUTHOR: Gordon Senesac Jr
+#+OPTIONS: toc:nil
+#+CREATOR: Emacs 25.3.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+* Converting Burp Capture file to a Sequence Diagram
+While studying a RESTful interface using [[https://portswigger.net/burp][Burp Proxy]],
+I thought it'd be useful to have a script automatically generate a 
+sequence diagram of the captured REST calls; this was inspired by the
+post: [[http://danlebrero.com/2017/04/06/documenting-your-architecture-wireshark-plantuml-and-a-repl/][Documenting Your Architecture]]. 
+However, in this case we're capturing the traffic with Burp, 
+performing some simple processing with Python, and using Org-Mode 
+to tie it together.
+
+/Note: while Github supports org files, I don't believe it will execute the Org-Babel 
+source blocks so the sequence diagram probably won't be displayed in the Github rendering/
+
+** Say we have a sample capture file that looks like this:
+#+INCLUDE: "./burp_capture.xml" :only-contents t src xml
+
+** We can process it with a bit of Python into a PlantUML Sequence Diagram
+#+NAME: plantuml-text
+#+BEGIN_SRC python :results output
+import xml.etree.ElementTree as ET
+tree = ET.parse( 'burp_capture.xml' )
+root = tree.getroot()
+
+for item in root.findall( 'item' ):
+  method = item.find( 'method' ).text
+  path = item.find( 'path' ).text
+  status = item.find( 'status' ).text
+  print 'Client -[#blue]> Server : ' + method + ' ' + path
+  arrow = '-[#blue]>'
+  if( int( status ) >= 400 ):
+      arrow = '-[#red]>'
+  elif( int( status ) >= 300 ):
+      arrow = '-[#green]>'
+  print 'Server ' + arrow + ' Client : ' + status
+  print '|||'
+
+#+END_SRC
+
+** And then generate the Sequence Diagram itself using the output of the previous code block
+#+HEADER: :var uml-text=plantuml-text
+#+BEGIN_SRC emacs-lisp :file diag.png :exports results
+(org-babel-execute:plantuml uml-text params)
+#+END_SRC
